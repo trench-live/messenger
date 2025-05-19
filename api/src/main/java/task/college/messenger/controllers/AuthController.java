@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import task.college.messenger.dto.LoginDTO;
-import task.college.messenger.dto.RegistrationDTO;
+import task.college.messenger.dto.request.LoginDTO;
+import task.college.messenger.dto.request.RegistrationDTO;
 import task.college.messenger.services.AuthService;
 
 import java.util.Map;

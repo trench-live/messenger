@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import task.college.messenger.dto.response.UserResponse;
 import task.college.messenger.repos.UserRepository;
 
 import java.util.List;
@@ -16,12 +17,9 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping
-    public List<UserResponseDTO> getAllUsers() {
+    public List<UserResponse> getAllUsers() {
         return userRepository.findAll().stream()
-                .map(user -> new UserResponseDTO(user.getId(), user.getUsername()))
+                .map(user -> new UserResponse(user.getId(), user.getUsername()))
                 .toList();
     }
-
-    // DTO
-    public record UserResponseDTO(Long id, String username) {}
 }
